@@ -11,22 +11,15 @@ require_once 'class/WindyApi.php';
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!--<a name="windy-webcam-timelapse-player" data-id="1549489452" href="https://windy.com/webcams/1549489452" >Londres: Big Ben - Westminster</a><script async type="text/javascript" src="https://webcams.windy.com/webcams/public/embed/script/player.js"></script>-->
+    <div class="container">
 
-<?php
-@$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
-$camLoc = $cam->getCamLocation(1549489452);
+        <?php
+        @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
+//        Mettre l'ID de la camera souhaitée ici: ➘ ➘ ➘ ➘ ➘
+        $camLoc = $cam->getCamLocation(1477556870);
+        echo $camLoc;
+        ?>
 
-echo $camLoc;
-?>
-
-
+    </div>
 </body>
 </html>
-
-<?php
-//@$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
-//$camLoc = $cam->getCamLocation(1549489452);
-//
-//echo $camLoc;
-//var_dump($camLoc);
