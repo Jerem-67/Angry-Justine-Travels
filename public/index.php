@@ -11,12 +11,17 @@ require_once 'class/WindyApi.php';
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<div class="container">
 <?php
 @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
 $camLoc = $cam->getCamLocation(1549489452);
 
 echo $camLoc;
+
+
 ?>
+</div>
 </body>
 </html>
 

@@ -15,14 +15,14 @@ class WindyApi
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_TIMEOUT, 1);
         $data = curl_exec($curl);
-        if($data === false || curl_getinfo($curl, CURLINFO_HTTP_CODE !== 200) ){
-            var_dump(curl_error($curl));
-            return "erreur d'affichage";
-        }else {
+//        if($data === false || curl_getinfo($curl, CURLINFO_HTTP_CODE !== 200) ){
+//            var_dump(curl_error($curl));
+//            return "erreur d'affichage";
+//        }else {
             $data = json_decode($data, true);
             return '<a name="windy-webcam-timelapse-player" data-id="' .$data["result"]["webcams"]["0"]["id"] .'" href="https://windy.com/webcams/' .$data["result"]["webcams"]["0"]["id"] .'" >' . $data["result"]["webcams"]["0"]["title"].'</a><script async type="text/javascript" src="../script/player.js"></script>';
 ;
-        }
+//        }
     }
 
 }
