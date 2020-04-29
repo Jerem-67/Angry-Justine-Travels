@@ -5,7 +5,7 @@
 
     <fieldset>
 
-        <legend>Enigme 2 :</legend>
+        <legend>Enigme 5 :</legend>
         <div>
             <!-- API -->
         </div>
@@ -14,7 +14,7 @@
         </div>
         <div>
             <div>
-            <input type="radio" id="rep1" name="rep1">
+                <input type="radio" id="rep1" name="rep1">
                 <label for="rep1"></label>
             </div>
             <div>
@@ -45,14 +45,13 @@
 $tentative = 0;
 if(!empty($_GET["send"])){
     $tentative += 1;
-    if(!empty($_GET["rep1"])){
-        echo "<p>BRAVO ! Angry Justine a trouvé ses vetements :p</p>";
-        echo "<a href='enigme3.php'>Next !</a>";
+    if(!empty($_GET["rep2"])){
+        echo "<p>BRAVO ! Angry Justine a trouvé sa brosse à cheveux ;)</p>";
+        echo "<a href='final.php'>Next !</a>";
     }else{
         echo "<p>Loupé ! Quel dommage...</p>";
     }
 }
-
 ?>
 <div>
     <?php
@@ -61,4 +60,3 @@ if(!empty($_GET["send"])){
     ?>
     <img src="">
 </div>
-

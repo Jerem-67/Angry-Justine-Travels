@@ -5,7 +5,7 @@
 
     <fieldset>
 
-        <legend>Enigme 2 :</legend>
+        <legend>Enigme 3 :</legend>
         <div>
             <!-- API -->
         </div>
@@ -45,9 +45,9 @@
 $tentative = 0;
 if(!empty($_GET["send"])){
     $tentative += 1;
-    if(!empty($_GET["rep1"])){
-        echo "<p>BRAVO ! Angry Justine a trouvé ses vetements :p</p>";
-        echo "<a href='enigme3.php'>Next !</a>";
+    if(!empty($_GET["rep4"])){
+        echo "<p>BRAVO ! Angry Justine a trouvé sa trousse à maquillage ;)</p>";
+        echo "<a href='enigme4.php'>Next !</a>";
     }else{
         echo "<p>Loupé ! Quel dommage...</p>";
     }
@@ -61,4 +61,3 @@ if(!empty($_GET["send"])){
     ?>
     <img src="">
 </div>
-
