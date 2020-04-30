@@ -19,6 +19,7 @@ if($_SERVER['REQUEST_URI'] == '/enigme2.php'){
     echo '<script type="text/javascript" src="./script/timeout.js"></script>';
 }
 ?>
+
 <div class="JK-content">
     <div class="img">
         <img class="avatar" src="image/Avatar2.png">
@@ -27,70 +28,68 @@ if($_SERVER['REQUEST_URI'] == '/enigme2.php'){
         </div>
         <div class="score">
             <?php
-            echo "<p class='tentative'> Nombres de tentatives : " . $_SESSION['tentative'];
+            echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
             ?>
         </div>
     </div>
-    <form method="GET" action="#">
-        <fieldset>
-            <h2>Enigme 2 :</h2>
-            <div class="container">
-                <?php
-                @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
-                $camLoc = $cam->getCamLocation(1549489452);
-
-                echo $camLoc;
-                ?>
-            </div>
-            <div>
-                <p class="indice">Indices</p>
-            </div>
-            <div class="rep">
-                <div class="interieur">
-                    <div>
-                        <input type="submit" value="Pont de Brooklyn" class="btn" name="rep1">
+    <div>
+        <form method="GET" action="#">
+                <h2>Enigme 2 :</h2>
+                <!--        <div class="container">-->
+                <!--            --><?php
+                //            @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
+                //            $camLoc = $cam->getCamLocation(1549489452);
+                //
+                //            echo $camLoc;
+                //
+                //            ?>
+                <!--        </div>-->
+                <div>
+                    <p class="indice">Indices</p>
+                </div>
+                <div class="rep">
+                    <div class="interieur">
+                        <div>
+                            <input type="submit" value="Pont de Brooklyn" class="btn" name="rep1">
+                        </div>
+                        <div>
+                            <input type="submit" value="Pont de Tatara" class="btn" name="rep2">
+                        </div>
                     </div>
-                    <div>
-                        <input type="submit" value="Pont de Tatara" class="btn" name="rep2">
+
+
+                    <div class="interieur">
+                        <div>
+                            <input type="submit" value="Justine" class="btn" name="rep3">
+                        </div>
+                        <div>
+                            <input type="submit" value="David" class="btn" name="rep4">
+                        </div>
                     </div>
                 </div>
-                <div class="interieur">
-                    <div>
-                        <input type="submit" value="Justine" class="btn" name="rep3">
-                    </div>
-                    <div>
-                        <input type="submit" value="David" class="btn" name="rep4">
-                    </div>
+                <div class="reponse">
+                    <?php
+                    $tentative = $_SESSION['tentative'];
+                    if (!empty($_GET["rep1"])) {
+                        $tentative += 1;
+                        echo "<p>BRAVO ! Angry Justine a trouvé ses vêtements:) </p>";
+                        echo "<div class=\"rep-img\"><img class=\"icon\" src='image/clothes.png'><a class='next' href='enigme3.php'>Next !</a></div>";
+                    } elseif (!empty($_GET["rep1"])) {
+                        $tentative += 1;
+                        echo "Loupé ! Quel dommage...";
+                    } elseif (!empty($_GET["rep2"])) {
+                        $tentative += 1;
+                        echo "Loupé ! Quel dommage...";
+                    } elseif (!empty($_GET["rep4"])) {
+                        $tentative += 1;
+                        echo "Loupé ! Quel dommage...";
+                    }
+                    $_SESSION['tentative'] = $tentative;
+                    ?>
                 </div>
-            </div>
-            <div class="reponse">
-                <?php
-                $tentative = $_SESSION['tentative'];
-                if (!empty($_GET["rep1"])) {
-                    $tentative += 1;
-                    echo "<p>BRAVO ! Angry Justine a trouvé sa tasse de café :) </p>";
-                    echo "<a class='next' href='enigme2.php'><img src='image/food_1.png'> Next !</a>";
-                } elseif (!empty($_GET["rep1"])) {
 
-                    $tentative += 1;
-                    echo "Loupé ! Quel dommage...";
-                } elseif (!empty($_GET["rep2"])) {
-                    $tentative += 1;
-                    echo "Loupé ! Quel dommage...";
-                } elseif (!empty($_GET["rep4"])) {
-                    $tentative += 1;
-                    echo "Loupé ! Quel dommage...";
-                }
-                $_SESSION['tentative'] = $tentative;
-                ?>
-            </div>
-        </fieldset>
-    </form>
-    <div class="score">
-        <?php
-        echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
-        ?>
+        </form>
     </div>
 </div>
-<script type="text/javascript" src="./script/timeout.js"></script>
+
 </body>

@@ -21,7 +21,18 @@ if($_SERVER['REQUEST_URI'] == '/enigme5.php'){
 ?>
 
 <div class="img">
-    <img src="image/Avatar6.png">
+    <img class="avatar" src="image/Avatar5.png">
+    <div class="icons">
+        <img class="icon" src='image/food_1.png'>
+        <img class="icon" src='image/clothes.png'>
+        <img class="icon" src='image/mascara.png'>
+        <img class="icon" src='image/hairdressing.png'>
+    </div>
+    <div class="score">
+        <?php
+        echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
+        ?>
+    </div>
 </div>
 <form method="GET" action="#">
 
@@ -65,7 +76,7 @@ if($_SERVER['REQUEST_URI'] == '/enigme5.php'){
             if (!empty($_GET["rep2"])) {
                 $tentative += 1;
                 echo "<p>BRAVO ! Angry Justine a trouvé son gateau préféré <3 </p>";
-                echo "<a class='next' href='final.php'><img src='image/food.png'> Next !</a>";
+                echo "<div class=\"rep-img\"><img class=\"icon\" src='image/food.png'><a class='next' href='result.php'>Next !</a></div>";
             } elseif (!empty($_GET["rep1"])) {
                 $tentative += 1;
                 echo "Loupé ! Quel dommage...";
