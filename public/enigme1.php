@@ -31,19 +31,6 @@ if($_SERVER['REQUEST_URI'] == '/enigme1.php'){
 <form method="GET" action="#">
 
     <fieldset>
-
-        <h2>Enigme 1 :</h2>
-
-
-        <div class="container">
-            <?php
-            @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
-            $camLoc = $cam->getCamLocation(1549489452);
-
-            echo $camLoc;
-            ?>
-        </div>
-
         <div>
             <p>Combien de mètres mesure la tour Eiffel ?</p>
         </div>
