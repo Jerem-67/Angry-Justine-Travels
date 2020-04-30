@@ -1,3 +1,6 @@
+<?php
+@session_start()
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +11,12 @@
 </head>
 <body>
 <div class="JK-content fin">
+
+    <div class="final">
+        <h5>Nous avons réussi !</h5>
+        <p>Merci beaucoup pour ton aide !</p>
+        <img src="image/result.png">
+    </div>
     <div class="img">
         <img class="avatar" src="image/Avatar6.png">
         <div class="icons">
@@ -22,11 +31,6 @@
             echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
             ?>
         </div>
-    </div>
-    <div class="final">
-        <h5>Nous avons réussi !</h5>
-        <p>Merci beaucoup pour ton aide !</p>
-        <img src="image/result.png">
     </div>
 </div>
 </body>

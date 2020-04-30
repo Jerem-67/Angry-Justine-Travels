@@ -20,15 +20,6 @@ if($_SERVER['REQUEST_URI'] == '/enigme1.php'){
 }
 ?>
 <div class="JK-content">
-    <div class="img">
-        <img class="avatar" src="image/Avatar1.png">
-        <div class="score">
-            <?php
-            echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
-            ?>
-        </div>
-    </div>
-
     <form method="GET" action="#">
     <fieldset>
         <h2>Enigme 1 :</h2>
@@ -103,12 +94,14 @@ if($_SERVER['REQUEST_URI'] == '/enigme1.php'){
         </fieldset>
 
     </form>
-    <div class="score">
-        <?php
-        echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
-        ?>
+    <div class="img">
+        <img class="avatar" src="image/Avatar1.png">
+        <div class="score">
+            <?php
+            echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
+            ?>
+        </div>
     </div>
-   
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

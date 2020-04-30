@@ -20,21 +20,6 @@ if($_SERVER['REQUEST_URI'] == '/enigme6.php'){
 }
 ?>
 <div class="JK-content">
-    <div class="img">
-        <img class="avatar" src="image/Avatar6.png">
-        <div class="icons">
-            <img class="icon" src='image/food_1.png'>
-            <img class="icon" src='image/clothes.png'>
-            <img class="icon" src='image/mascara.png'>
-            <img class="icon" src='image/hairdressing.png'>
-            <img class="icon" src='image/food.png'>
-        </div>
-        <div class="score">
-            <?php
-            echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
-            ?>
-        </div>
-    </div>
     <form method="GET" action="#">
 
         <fieldset>
@@ -112,10 +97,20 @@ if($_SERVER['REQUEST_URI'] == '/enigme6.php'){
 
     </form>
 
-    <div class="score">
-        <?php
-        echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
-        ?>
+    <div class="img">
+        <img class="avatar" src="image/Avatar6.png">
+        <div class="icons">
+            <img class="icon" src='image/food_1.png'>
+            <img class="icon" src='image/clothes.png'>
+            <img class="icon" src='image/mascara.png'>
+            <img class="icon" src='image/hairdressing.png'>
+            <img class="icon" src='image/food.png'>
+        </div>
+        <div class="score">
+            <?php
+            echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
+            ?>
+        </div>
     </div>
 </div>
 
