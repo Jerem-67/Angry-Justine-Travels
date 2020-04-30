@@ -15,35 +15,38 @@
     <fieldset>
 
         <h2>Enigme 1 :</h2>
-        <!--        <div class="container">-->
-        <!--            --><?php
-        //            @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
-        //            $camLoc = $cam->getCamLocation(1549489452);
-        //
-        //            echo $camLoc;
-        //
-        //            ?>
-        <!--        </div>-->
+        <div>
+            <p>Combien de mètres mesure la tour Eiffel ?</p>
+        </div>
+        <div class="container">
+            <?php
+                require_once './class/WindyApi.php';
+                @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
+                $camLoc = $cam->getCamLocation(1228218512);
+
+                echo $camLoc;
+            ?>
         <div>
             <p class="indice">Indices</p>
         </div>
+            <div class="c1" onclick="pchild=this.getElementsByTagName('p'); if(pchild[0].style.visibility!='hidden'){pchild[0].style.visibility='hidden'; pchild[0].style.height='0';}else{pchild[0].style.visibility=''; pchild[0].style.height=''}">Indice <p style="">Indice pour la Tour Eiffel</p> </div>
         <div class="rep">
             <div class="interieur">
                 <div>
-                    <input type="submit" value="Pont de Brooklyn" class="btn" name="rep1">
+                    <input type="submit" value="122 mètres" class="btn" name="rep1">
                 </div>
                 <div>
-                    <input type="submit" value="Pont de Tatara" class="btn" name="rep2">
+                    <input type="submit" value="288 mètres" class="btn" name="rep2">
                 </div>
             </div>
 
 
             <div class="interieur">
                 <div>
-                    <input type="submit" value="Justine" class="btn" name="rep3">
+                    <input type="submit" value="324 mètres" class="btn" name="rep3">
                 </div>
                 <div>
-                    <input type="submit" value="David" class="btn" name="rep4">
+                    <input type="submit" value="503 mètres" class="btn" name="rep4">
                 </div>
             </div>
         </div>
