@@ -1,5 +1,4 @@
 body{
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,4 +75,9 @@ form{
     position: absolute;
     right: 70px;
     margin-top: 5px;
+}
+
+#sofa{
+    margin-top: 20%;
+    margin-bottom: 100%;
 }

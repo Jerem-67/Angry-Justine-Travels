@@ -1,9 +1,9 @@
 <?php
 require_once 'class/WindyApi.php';
+@session_start();
+$_SESSION['tentative'] = 0;
 ?>
-<?php
-phpinfo();
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
