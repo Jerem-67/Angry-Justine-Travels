@@ -38,39 +38,58 @@ if($_SERVER['REQUEST_URI'] == '/enigme4.php'){
     <fieldset>
 
         <h2>Enigme 4 :</h2>
+        <div>
+            <p>Quel est le nom de ce bâtiment ?</p>
+        </div>
         <div class="container">
             <?php
+            require_once './class/WindyApi.php';
             @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
-            $camLoc = $cam->getCamLocation(1549489452);
+            $camLoc = $cam->getCamLocation(1436279206);
 
             echo $camLoc;
             ?>
-        </div>
-        <div>
-            <p class="indice">Indices</p>
-        </div>
+            <div>
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Indice
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
+                                Christophe Colomb l'a "découvert"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <div class="rep">
             <div class="interieur">
                 <div>
-                    <input type="submit" value="Pont de Brooklyn" class="btn" name="rep1">
+                    <input type="submit" value="Parthénon" class="btn" name="rep1">
                 </div>
                 <div>
-                    <input type="submit" value="Pont de Tatara" class="btn" name="rep2">
+                    <input type="submit" value="Capitol des Etats-Unis" class="btn" name="rep2">
                 </div>
             </div>
             <div class="interieur">
                 <div>
-                    <input type="submit" value="Justine" class="btn" name="rep3">
+                    <input type="submit" value="Maison dansante" class="btn" name="rep3">
                 </div>
                 <div>
-                    <input type="submit" value="David" class="btn" name="rep4">
+                    <input type="submit" value="Woolworth" class="btn" name="rep4">
                 </div>
             </div>
         </div>
         <div class="reponse">
             <?php
-            $tentative = $_SESSION['tentative'];
-            if (!empty($_GET["rep4"])) {
+
+            $tentative = 0;
+            if (!empty($_GET["rep2"])) {
                 $tentative += 1;
                 echo "<p>BRAVO ! Angry Justine a trouvé sa brosse à cheveux :D </p>";
                 echo "<div class=\"rep-img\"><img class=\"icon\" src='image/hairdressing.png'><a class='next' href='enigme5.php'>Next !</a></div>";
@@ -97,5 +116,9 @@ if($_SERVER['REQUEST_URI'] == '/enigme4.php'){
     echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
     ?>
 </div>
-<script type="text/javascript" src="./script/timeout.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
