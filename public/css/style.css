@@ -87,10 +87,7 @@ form{
     justify-content: center;
     align-items: center;
 }
-#sofa{
-    margin-top: 20%;
-    margin-bottom: 100%;
-}
+
 .icon{
     width: 50px;
 }
@@ -105,11 +102,10 @@ form{
     text-align: right;
     margin-top: 3%;
 }
+
 #sofa{
     display: flex;
     justify-content: center;
     margin-top: 20%;
     margin-bottom: 100%;
-
 }
-

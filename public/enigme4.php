@@ -13,7 +13,12 @@ require_once './class/WindyApi.php';
 </head>
 <body>
 <!--image de chargement-->
-<div id="sofa"><img src="./image/32ml9m.gif"> </div>
+<?php
+if($_SERVER['REQUEST_URI'] == '/enigme4.php'){
+    echo '<div id="sofa"><img src="./image/32ml9m.gif"> </div>';
+    echo '<script type="text/javascript" src="./script/timeout.js"></script>';
+}
+?>
 
 <div class="img">
     <img class="avatar" src="image/Avatar4.png">
