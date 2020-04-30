@@ -112,4 +112,16 @@ form{
     margin-bottom: 100%;
 
 }
+.final{
+    text-align: center;
+    background: white;
+    border-radius: 35px;
+    font-size: 37px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    border: black 1px solid;
+}
+.final h5{
+    font-size: 42px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
 
