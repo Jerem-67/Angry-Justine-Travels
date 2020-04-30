@@ -16,7 +16,12 @@ require_once './class/WindyApi.php';
 <div id="sofa"><img src="./image/32ml9m.gif"> </div>
 
 <div class="img">
-<img src="image/Avatar1.png">
+    <img class="avatar" src="image/Avatar1.png">
+    <div class="score">
+        <?php
+        echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
+        ?>
+    </div>
 </div>
 
 <form method="GET" action="#">

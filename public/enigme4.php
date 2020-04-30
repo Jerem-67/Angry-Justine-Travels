@@ -16,7 +16,17 @@ require_once './class/WindyApi.php';
 <div id="sofa"><img src="./image/32ml9m.gif"> </div>
 
 <div class="img">
-    <img src="image/Avatar4.png">
+    <img class="avatar" src="image/Avatar4.png">
+    <div class="icons">
+        <img class="icon" src='image/food_1.png'>
+        <img class="icon" src='image/clothes.png'>
+        <img class="icon" src='image/mascara.png'>
+    </div>
+    <div class="score">
+        <?php
+        echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
+        ?>
+    </div>
 </div>
 <form method="GET" action="#">
 
@@ -58,7 +68,7 @@ require_once './class/WindyApi.php';
             if (!empty($_GET["rep4"])) {
                 $tentative += 1;
                 echo "<p>BRAVO ! Angry Justine a trouvé sa brosse à cheveux :D </p>";
-                echo "<a class='next' href='enigme5.php'><img src='image/hairdressing.png'> Next !</a>";
+                echo "<div class=\"rep-img\"><img class=\"icon\" src='image/hairdressing.png'><a class='next' href='enigme5.php'>Next !</a></div>";
             } elseif (!empty($_GET["rep1"])) {
                 $tentative += 1;
                 echo "Loupé ! Quel dommage...";
