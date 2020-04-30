@@ -31,6 +31,7 @@ if($_SERVER['REQUEST_URI'] == '/enigme1.php'){
 
     <form method="GET" action="#">
     <fieldset>
+        <h2>Enigme 1 :</h2>
         <div>
             <p>Combien de mètres mesure la tour Eiffel ?</p>
         </div>
@@ -69,15 +70,15 @@ if($_SERVER['REQUEST_URI'] == '/enigme1.php'){
                     <input type="submit" value="288 mètres" class="btn" name="rep2">
                 </div>
             </div>
-           <div class="rep">
-            <div class="interieur">
-                <div>
-                    <input type="submit" value="324 mètres" class="btn" name="rep3">
+                <div class="interieur">
+                    <div>
+                        <input type="submit" value="324 mètres" class="btn" name="rep3">
+                    </div>
+                    <div>
+                        <input type="submit" value="503 mètres" class="btn" name="rep4">
+                    </div>
                 </div>
-                <div>
-                    <input type="submit" value="503 mètres" class="btn" name="rep4">
-                </div>
-            </div>
+           </div>
             <div class="reponse">
                 <?php
                 $tentative = $_SESSION['tentative'];

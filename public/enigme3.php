@@ -68,22 +68,18 @@ if($_SERVER['REQUEST_URI'] == '/enigme3.php'){
         <div class="rep">
             <div class="interieur">
                 <div>
-                    <input type="submit" value="Pont de Brooklyn" class="btn" name="rep1">
+                    <input type="submit" value="Russie" class="btn" name="rep1">
                 </div>
                 <div>
-                    <input type="submit" value="Pont de Tatara" class="btn" name="rep2">
+                    <input type="submit" value="Alaska" class="btn" name="rep2">
                 </div>
             </div>
-            <div>
-                <p class="indice">Indices</p>
-            </div>
-            <div class="rep">
                 <div class="interieur">
                     <div>
-                        <input type="submit" value="Pont de Brooklyn" class="btn" name="rep1">
+                        <input type="submit" value="Groenland" class="btn" name="rep3">
                     </div>
                     <div>
-                        <input type="submit" value="Pont de Tatara" class="btn" name="rep2">
+                        <input type="submit" value="Laponie" class="btn" name="rep4">
                     </div>
                 </div>
                 </div>

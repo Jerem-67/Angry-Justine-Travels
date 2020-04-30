@@ -87,7 +87,7 @@ if($_SERVER['REQUEST_URI'] == '/enigme4.php'){
         <div class="reponse">
             <?php
 
-            $tentative = 0;
+            $tentative = $_SESSION['tentative'];
             if (!empty($_GET["rep2"])) {
                 $tentative += 1;
                 echo "<p>BRAVO ! Angry Justine a trouvé sa brosse à cheveux :D </p>";

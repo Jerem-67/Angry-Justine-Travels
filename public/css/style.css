@@ -112,13 +112,19 @@ form{
 
 .final{
     text-align: center;
-    background: white;
     border-radius: 35px;
     font-size: 37px;
     font-family: 'Open Sans Condensed', sans-serif;
-    border: black 1px solid;
+    color: white;
+    padding-top: 4%;
 }
 .final h5{
     font-size: 42px;
     font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.fin {
+    display: flex;
+    justify-content: center;
+    margin-right: 15%;
 }

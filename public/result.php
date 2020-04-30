@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="JK-content">
+<div class="JK-content fin">
     <div class="img">
         <img class="avatar" src="image/Avatar6.png">
         <div class="icons">
