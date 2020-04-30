@@ -1,0 +1,51 @@
+body{
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #007e94;
+}
+h1{
+    margin: 3% 0;
+    color: white;
+    font-family: 'Sacramento', cursive;
+    font-size: 60px;
+}
+#carouselExampleInterval{
+    width: 50%;
+    border: black solid 2px;
+    background: white;
+}
+.slid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+.image{
+    margin: 3%;
+}
+.slid h5{
+    font-size: 42px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+.slid div{
+    margin: 2% 0;
+
+}
+.slid p{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 27px;
+    margin: 0;
+}
+#codeschool{
+    color: #EC5569;
+    font-weight: bold;
+}
+.slid a{
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+    font-size: 27px;
+}
