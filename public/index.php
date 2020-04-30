@@ -1,5 +1,6 @@
 <?php
 require_once 'class/WindyApi.php';
+$_SESSION['tentative'] = 0;
 ?>
 <!doctype html>
 <html lang="en">

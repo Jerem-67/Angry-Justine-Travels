@@ -8,7 +8,16 @@
 </head>
 <body>
 <div class="img">
-    <img src="image/Avatar2.png">
+    <img class="avatar" src="image/Avatar2.png">
+    <div class="icons">
+        <img class="icon" src='image/food_1.png'>
+    </div>
+    <div class="score">
+        <?php
+        echo "<p class='tentative'> Nombres de tentatives : " . $_SESSION['tentative'];
+        ?>
+    </div>
+
 </div>
 <form method="GET" action="#">
 
@@ -49,19 +58,22 @@
         </div>
         <div class="reponse">
             <?php
-            $tentative = 0;
+            $tentative = $_SESSION['tentative'];
             if (!empty($_GET["rep1"])) {
                 $tentative += 1;
-                echo "<p>BRAVO ! Angry Justine a trouvé ses vetements :p </p>";
-                echo "<a class='next' href='enigme3.php'><img src='image/clothes.png'> Next !</a>";
-            } elseif (!empty($_GET["rep3"])) {
+                echo "<p>BRAVO ! Angry Justine a trouvé sa tasse de café :) </p>";
+                echo "<a class='next' href='enigme2.php'><img src='image/food_1.png'> Next !</a>";
+            } elseif (!empty($_GET["rep1"])) {
+                $tentative += 1;
                 echo "Loupé ! Quel dommage...";
             } elseif (!empty($_GET["rep2"])) {
+                $tentative += 1;
                 echo "Loupé ! Quel dommage...";
             } elseif (!empty($_GET["rep4"])) {
+                $tentative += 1;
                 echo "Loupé ! Quel dommage...";
             }
-
+            $_SESSION['tentative'] = $tentative;
             ?>
         </div>
 
@@ -69,10 +81,6 @@
 
 </form>
 
-<div class="score">
-    <?php
-    echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
-    ?>
-</div>
+
 </body>
 
