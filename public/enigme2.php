@@ -16,7 +16,16 @@ require_once './class/WindyApi.php';
 <div id="sofa"><img src="./image/32ml9m.gif"> </div>
 
 <div class="img">
-    <img src="image/Avatar2.png">
+    <img class="avatar" src="image/Avatar2.png">
+    <div class="icons">
+        <img class="icon" src='image/food_1.png'>
+    </div>
+    <div class="score">
+        <?php
+        echo "<p class='tentative'> Nombres de tentatives : " . $_SESSION['tentative'];
+        ?>
+    </div>
+
 </div>
 <form method="GET" action="#">
 
@@ -59,9 +68,10 @@ require_once './class/WindyApi.php';
             $tentative = $_SESSION['tentative'];
             if (!empty($_GET["rep1"])) {
                 $tentative += 1;
-                echo "<p>BRAVO ! Angry Justine a trouvé ses vetements :p </p>";
-                echo "<a class='next' href='enigme3.php'><img src='image/clothes.png'> Next !</a>";
-            } elseif (!empty($_GET["rep3"])) {
+                echo "<p>BRAVO ! Angry Justine a trouvé sa tasse de café :) </p>";
+                echo "<a class='next' href='enigme2.php'><img src='image/food_1.png'> Next !</a>";
+            } elseif (!empty($_GET["rep1"])) {
+
                 $tentative += 1;
                 echo "Loupé ! Quel dommage...";
             } elseif (!empty($_GET["rep2"])) {
@@ -78,12 +88,11 @@ require_once './class/WindyApi.php';
     </fieldset>
 
 </form>
-
 <div class="score">
     <?php
     echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
     ?>
 </div>
 <script type="text/javascript" src="./script/timeout.js"></script>
-</body>
 
+</body>

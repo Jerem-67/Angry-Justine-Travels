@@ -61,7 +61,7 @@ require_once './class/WindyApi.php';
             if (!empty($_GET["rep3"])) {
                 $tentative += 1;
                 echo "<p>BRAVO ! Angry Justine a trouvé sa tasse de café :) </p>";
-                echo "<a class='next' href='enigme2.php'><img src='image/food_1.png'> Next !</a>";
+                echo "<div class=\"rep-img\"><img class=\"icon\" src='image/food_1.png'><a class='next' href='enigme2.php'>Next !</a></div>";
             } elseif (!empty($_GET["rep1"])) {
                 $tentative += 1;
                 echo "Loupé ! Quel dommage...";
