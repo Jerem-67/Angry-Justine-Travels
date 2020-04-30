@@ -13,7 +13,13 @@ require_once './class/WindyApi.php';
 </head>
 <body>
 <!--image de chargement-->
-<div id="sofa"><img src="./image/32ml9m.gif"> </div>
+  <?php
+if($_SERVER['REQUEST_URI'] == '/enigme5.php'){
+    echo '<div id="sofa"><img src="./image/32ml9m.gif"> </div>';
+    echo '<script type="text/javascript" src="./script/timeout.js"></script>';
+}
+?>
+
 <div class="JK-content">
     <div class="img">
         <img class="avatar" src="image/Avatar5.png">
@@ -28,21 +34,44 @@ require_once './class/WindyApi.php';
             echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
             ?>
         </div>
+
     </div>
     <form method="GET" action="#">
 
         <fieldset>
 
-            <h2>Enigme 5 : Spécialité du Pays</h2>
-            <div class="container">
-                <?php
-                @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
-                $camLoc = $cam->getCamLocation(1549489452);
 
-                echo $camLoc;
-                ?>
-            </div>
+
+        <div>
+            <p>Spécialité dessert du pays ?</p>
+        </div>
+        <div class="container">
+            <?php
+            require_once './class/WindyApi.php';
+            @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
+            $camLoc = $cam->getCamLocation(1570401195);
+
+            echo $camLoc;
+            ?>
             <div>
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Indice
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
+                                Portugal
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
                 <p class="indice">Indices</p>
             </div>
             <div class="rep">
@@ -65,27 +94,28 @@ require_once './class/WindyApi.php';
                     </div>
                 </div>
             </div>
-            <div class="reponse">
-                <?php
-                $tentative = $_SESSION['tentative'];
-                if (!empty($_GET["rep2"])) {
-                    $tentative += 1;
-                    echo "<p>BRAVO ! Angry Justine a trouvé son gateau préféré <3 </p>";
-                    echo "<div class=\"rep-img\"><img class=\"icon\" src='image/food.png'><a class='next' href='result.php'>Next !</a></div>";
-                } elseif (!empty($_GET["rep1"])) {
-                    $tentative += 1;
-                    echo "Loupé ! Quel dommage...";
-                } elseif (!empty($_GET["rep2"])) {
-                    $tentative += 1;
-                    echo "Loupé ! Quel dommage...";
-                } elseif (!empty($_GET["rep3"])) {
-                    $tentative += 1;
-                    echo "Loupé ! Quel dommage...";
-                }
-                $_SESSION['tentative'] = $tentative;
-                ?>
-            </div>
 
+        </div>
+        <div class="reponse">
+            <?php
+            $tentative = $_SESSION['tentative'];
+            if (!empty($_GET["rep2"])) {
+                $tentative += 1;
+                echo "<p>BRAVO ! Angry Justine a trouvé son gateau préféré <3 </p>";
+                echo "<a class='next' href='enigme6.php'><img src='image/food.png'> Next !</a>";
+            } elseif (!empty($_GET["rep1"])) {
+                $tentative += 1;
+                echo "Loupé ! Quel dommage...";
+            } elseif (!empty($_GET["rep2"])) {
+                $tentative += 1;
+                echo "Loupé ! Quel dommage...";
+            } elseif (!empty($_GET["rep3"])) {
+                $tentative += 1;
+                echo "Loupé ! Quel dommage...";
+            }
+            $_SESSION['tentative'] = $tentative;
+            ?>
+        </div>
         </fieldset>
 
     </form>
@@ -95,6 +125,11 @@ require_once './class/WindyApi.php';
         echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
         ?>
     </div>
-    <script type="text/javascript" src="./script/timeout.js"></script>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
