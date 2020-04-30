@@ -15,6 +15,7 @@ class WindyApi
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_TIMEOUT, 1);
         $data = curl_exec($curl);
+
 //        if(empty($data['result']['webcams'])){
 //            return "Impossible d'afficher la camera, veuillez controller l'ID de celle-ci";
 //        }else {
