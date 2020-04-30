@@ -14,86 +14,87 @@ require_once './class/WindyApi.php';
 <body>
 <!--image de chargement-->
 <div id="sofa"><img src="./image/32ml9m.gif"> </div>
-
-<div class="img">
-    <img class="avatar" src="image/Avatar5.png">
-    <div class="icons">
-        <img class="icon" src='image/food_1.png'>
-        <img class="icon" src='image/clothes.png'>
-        <img class="icon" src='image/mascara.png'>
-        <img class="icon" src='image/hairdressing.png'>
+<div class="JK-content">
+    <div class="img">
+        <img class="avatar" src="image/Avatar5.png">
+        <div class="icons">
+            <img class="icon" src='image/food_1.png'>
+            <img class="icon" src='image/clothes.png'>
+            <img class="icon" src='image/mascara.png'>
+            <img class="icon" src='image/hairdressing.png'>
+        </div>
+        <div class="score">
+            <?php
+            echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
+            ?>
+        </div>
     </div>
+    <form method="GET" action="#">
+
+        <fieldset>
+
+            <h2>Enigme 5 : Spécialité du Pays</h2>
+            <div class="container">
+                <?php
+                @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
+                $camLoc = $cam->getCamLocation(1549489452);
+
+                echo $camLoc;
+                ?>
+            </div>
+            <div>
+                <p class="indice">Indices</p>
+            </div>
+            <div class="rep">
+                <div class="interieur">
+                    <div>
+                        <input type="submit" value="Flan" class="btn" name="rep1">
+                    </div>
+                    <div>
+                        <input type="submit" value="Pasteis de Nata" class="btn" name="rep2">
+                    </div>
+                </div>
+
+
+                <div class="interieur">
+                    <div>
+                        <input type="submit" value="Mousse au chocolat" class="btn" name="rep3">
+                    </div>
+                    <div>
+                        <input type="submit" value="Macaron" class="btn" name="rep4">
+                    </div>
+                </div>
+            </div>
+            <div class="reponse">
+                <?php
+                $tentative = $_SESSION['tentative'];
+                if (!empty($_GET["rep2"])) {
+                    $tentative += 1;
+                    echo "<p>BRAVO ! Angry Justine a trouvé son gateau préféré <3 </p>";
+                    echo "<div class=\"rep-img\"><img class=\"icon\" src='image/food.png'><a class='next' href='result.php'>Next !</a></div>";
+                } elseif (!empty($_GET["rep1"])) {
+                    $tentative += 1;
+                    echo "Loupé ! Quel dommage...";
+                } elseif (!empty($_GET["rep2"])) {
+                    $tentative += 1;
+                    echo "Loupé ! Quel dommage...";
+                } elseif (!empty($_GET["rep3"])) {
+                    $tentative += 1;
+                    echo "Loupé ! Quel dommage...";
+                }
+                $_SESSION['tentative'] = $tentative;
+                ?>
+            </div>
+
+        </fieldset>
+
+    </form>
+
     <div class="score">
         <?php
-        echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
+        echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
         ?>
     </div>
+    <script type="text/javascript" src="./script/timeout.js"></script>
 </div>
-<form method="GET" action="#">
-
-    <fieldset>
-
-        <h2>Enigme 5 : Spécialité du Pays</h2>
-        <div class="container">
-            <?php
-            @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
-            $camLoc = $cam->getCamLocation(1549489452);
-
-            echo $camLoc;
-            ?>
-        </div>
-        <div>
-            <p class="indice">Indices</p>
-        </div>
-        <div class="rep">
-            <div class="interieur">
-                <div>
-                    <input type="submit" value="Flan" class="btn" name="rep1">
-                </div>
-                <div>
-                    <input type="submit" value="Pasteis de Nata" class="btn" name="rep2">
-                </div>
-            </div>
-
-
-            <div class="interieur">
-                <div>
-                    <input type="submit" value="Mousse au chocolat" class="btn" name="rep3">
-                </div>
-                <div>
-                    <input type="submit" value="Macaron" class="btn" name="rep4">
-                </div>
-            </div>
-        </div>
-        <div class="reponse">
-            <?php
-            $tentative = $_SESSION['tentative'];
-            if (!empty($_GET["rep2"])) {
-                $tentative += 1;
-                echo "<p>BRAVO ! Angry Justine a trouvé son gateau préféré <3 </p>";
-                echo "<div class=\"rep-img\"><img class=\"icon\" src='image/food.png'><a class='next' href='result.php'>Next !</a></div>";
-            } elseif (!empty($_GET["rep1"])) {
-                $tentative += 1;
-                echo "Loupé ! Quel dommage...";
-            } elseif (!empty($_GET["rep2"])) {
-                $tentative += 1;
-                echo "Loupé ! Quel dommage...";
-            } elseif (!empty($_GET["rep3"])) {
-                $tentative += 1;
-                echo "Loupé ! Quel dommage...";
-            }
-            $_SESSION['tentative'] = $tentative;
-            ?>
-        </div>
-
-    </fieldset>
-
-</form>
-
-<div class="score">
-    <?php
-    echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
-    ?>
-</div>
-<script type="text/javascript" src="./script/timeout.js"></script>
 </body>
