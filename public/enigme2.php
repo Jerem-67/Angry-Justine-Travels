@@ -1,3 +1,8 @@
+<?php
+require_once './class/WindyApi.php';
+@session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +12,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!--image de chargement-->
+<div id="sofa"><img src="./image/32ml9m.gif"> </div>
+
 <div class="img">
     <img class="avatar" src="image/Avatar2.png">
     <div class="icons">
@@ -24,15 +32,14 @@
     <fieldset>
 
         <h2>Enigme 2 :</h2>
-        <!--        <div class="container">-->
-        <!--            --><?php
-        //            @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
-        //            $camLoc = $cam->getCamLocation(1549489452);
-        //
-        //            echo $camLoc;
-        //
-        //            ?>
-        <!--        </div>-->
+        <div class="container">
+            <?php
+            @$cam = new WindyApi(zstN1Wb3W5GWTdmXMHvyScEs7TXJdpWL);
+            $camLoc = $cam->getCamLocation(1549489452);
+
+            echo $camLoc;
+            ?>
+        </div>
         <div>
             <p class="indice">Indices</p>
         </div>
@@ -64,6 +71,7 @@
                 echo "<p>BRAVO ! Angry Justine a trouvé sa tasse de café :) </p>";
                 echo "<a class='next' href='enigme2.php'><img src='image/food_1.png'> Next !</a>";
             } elseif (!empty($_GET["rep1"])) {
+
                 $tentative += 1;
                 echo "Loupé ! Quel dommage...";
             } elseif (!empty($_GET["rep2"])) {
@@ -80,7 +88,11 @@
     </fieldset>
 
 </form>
-
+<div class="score">
+    <?php
+    echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
+    ?>
+</div>
+<script type="text/javascript" src="./script/timeout.js"></script>
 
 </body>
-

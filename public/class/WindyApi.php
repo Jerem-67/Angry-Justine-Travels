@@ -13,7 +13,7 @@ class WindyApi
     {
         $curl = curl_init("https://api.windy.com/api/webcams/v2/list/webcam={$camLocation}?show=webcams:player&key={$this->apiKey}");
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 1);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 5);
         $data = curl_exec($curl);
 
 //        if(empty($data['result']['webcams'])){

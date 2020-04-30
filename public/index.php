@@ -1,8 +1,10 @@
 <?php
 require_once 'class/WindyApi.php';
+@session_start();
 $_SESSION['tentative'] = 0;
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
