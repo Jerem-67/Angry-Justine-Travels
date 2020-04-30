@@ -26,4 +26,3 @@ echo $camLoc;
 </div>
 </body>
 </html>
-
