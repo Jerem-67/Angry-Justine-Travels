@@ -13,30 +13,33 @@ require_once './class/WindyApi.php';
 </head>
 <body>
 <!--image de chargement-->
-<?php
+  <?php
 if($_SERVER['REQUEST_URI'] == '/enigme5.php'){
     echo '<div id="sofa"><img src="./image/32ml9m.gif"> </div>';
     echo '<script type="text/javascript" src="./script/timeout.js"></script>';
 }
 ?>
 
-<div class="img">
-    <img class="avatar" src="image/Avatar5.png">
-    <div class="icons">
-        <img class="icon" src='image/food_1.png'>
-        <img class="icon" src='image/clothes.png'>
-        <img class="icon" src='image/mascara.png'>
-        <img class="icon" src='image/hairdressing.png'>
-    </div>
-    <div class="score">
-        <?php
-        echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
-        ?>
-    </div>
-</div>
-<form method="GET" action="#">
+<div class="JK-content">
+    <div class="img">
+        <img class="avatar" src="image/Avatar5.png">
+        <div class="icons">
+            <img class="icon" src='image/food_1.png'>
+            <img class="icon" src='image/clothes.png'>
+            <img class="icon" src='image/mascara.png'>
+            <img class="icon" src='image/hairdressing.png'>
+        </div>
+        <div class="score">
+            <?php
+            echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
+            ?>
+        </div>
 
-    <fieldset>
+    </div>
+    <form method="GET" action="#">
+
+        <fieldset>
+
 
 
         <div>
@@ -68,25 +71,30 @@ if($_SERVER['REQUEST_URI'] == '/enigme5.php'){
                     </div>
                 </div>
             </div>
-        <div class="rep">
-            <div class="interieur">
-                <div>
-                    <input type="submit" value="Flan" class="btn" name="rep1">
+            
+                <p class="indice">Indices</p>
+            </div>
+            <div class="rep">
+                <div class="interieur">
+                    <div>
+                        <input type="submit" value="Flan" class="btn" name="rep1">
+                    </div>
+                    <div>
+                        <input type="submit" value="Pasteis de Nata" class="btn" name="rep2">
+                    </div>
                 </div>
-                <div>
-                    <input type="submit" value="Pasteis de Nata" class="btn" name="rep2">
+
+
+                <div class="interieur">
+                    <div>
+                        <input type="submit" value="Mousse au chocolat" class="btn" name="rep3">
+                    </div>
+                    <div>
+                        <input type="submit" value="Macaron" class="btn" name="rep4">
+                    </div>
                 </div>
             </div>
 
-
-            <div class="interieur">
-                <div>
-                    <input type="submit" value="Mousse au chocolat" class="btn" name="rep3">
-                </div>
-                <div>
-                    <input type="submit" value="Macaron" class="btn" name="rep4">
-                </div>
-            </div>
         </div>
         <div class="reponse">
             <?php
@@ -108,16 +116,17 @@ if($_SERVER['REQUEST_URI'] == '/enigme5.php'){
             $_SESSION['tentative'] = $tentative;
             ?>
         </div>
+        </fieldset>
 
-    </fieldset>
+    </form>
 
-</form>
-
-<div class="score">
-    <?php
-    echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
-    ?>
+    <div class="score">
+        <?php
+        echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
+        ?>
+    </div>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
