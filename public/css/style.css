@@ -12,7 +12,6 @@ h2{
     margin-top: 5%;
 }
 form{
-    margin-top: 10%;
     background-color: white;
     width: 60%;
     text-align: center;
@@ -66,4 +65,15 @@ form{
 .next:hover{
     text-decoration: none;
     color: #007e94;
+}
+.img{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 1%;
+}
+.score{
+    position: absolute;
+    right: 70px;
+    margin-top: 5px;
 }

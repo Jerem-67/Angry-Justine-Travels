@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<div class="img">
+    <img src="image/Avatar6.png">
+</div>
 <form method="GET" action="#">
 
     <fieldset>
@@ -51,7 +53,7 @@
             if (!empty($_GET["rep2"])) {
                 $tentative += 1;
                 echo "<p>BRAVO ! Angry Justine a trouvé son gateau préféré <3 </p>";
-                echo "<a class='next' href='final.php'>Next !</a>";
+                echo "<a class='next' href='final.php'><img src='image/food.png'> Next !</a>";
             } elseif (!empty($_GET["rep1"])) {
                 echo "Loupé ! Quel dommage...";
             } elseif (!empty($_GET["rep2"])) {
@@ -67,11 +69,9 @@
 
 </form>
 
-<div>
+<div class="score">
     <?php
-
     echo "<p class='tentative'> Nombres de tentatives : " . $tentative;
     ?>
-    <img src="">
 </div>
 </body>
