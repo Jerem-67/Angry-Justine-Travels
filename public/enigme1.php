@@ -8,7 +8,12 @@
 </head>
 <body>
 <div class="img">
-<img src="image/Avatar1.png">
+    <img class="avatar" src="image/Avatar1.png">
+    <div class="score">
+        <?php
+        echo "<p class='tentative'> Nombre de tentatives : " . $_SESSION['tentative'];
+        ?>
+    </div>
 </div>
 <form method="GET" action="#">
 
